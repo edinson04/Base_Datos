@@ -1,0 +1,10 @@
+*.pdb
+*.suo
+*.vsidx
+*.cache
+*.db
+*.resources
+*.exe
+bin/
+obj/
+.vs/

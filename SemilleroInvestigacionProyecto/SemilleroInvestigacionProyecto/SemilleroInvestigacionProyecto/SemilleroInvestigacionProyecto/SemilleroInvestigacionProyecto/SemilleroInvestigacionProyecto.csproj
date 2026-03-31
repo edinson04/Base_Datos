@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A09D37B-2E38-4BAD-BC55-7269834BC4CA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SemilleroInvestigacionProyecto</RootNamespace>
+    <AssemblyName>SemilleroInvestigacionProyecto</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Editar_Integrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar_Integrante.Designer.cs">
+      <DependentUpon>Editar_Integrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar_Proyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar_Proyecto.Designer.cs">
+      <DependentUpon>Editar_Proyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Integrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Integrante.Designer.cs">
+      <DependentUpon>Eliminar_Integrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar_Integrantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_Integrantes.Designer.cs">
+      <DependentUpon>Consultar_Integrantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar_Fases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar_Fases.Designer.cs">
+      <DependentUpon>Editar_Fases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar_Actividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar_Actividades.Designer.cs">
+      <DependentUpon>Editar_Actividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Proyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Proyectos.Designer.cs">
+      <DependentUpon>Eliminar_Proyectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Fases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Fases.Designer.cs">
+      <DependentUpon>Eliminar_Fases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Actividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Actividades.Designer.cs">
+      <DependentUpon>Eliminar_Actividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar_Proyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_Proyectos.Designer.cs">
+      <DependentUpon>Consultar_Proyectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar_Fases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_Fases.Designer.cs">
+      <DependentUpon>Consultar_Fases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar_Actividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_Actividades.Designer.cs">
+      <DependentUpon>Consultar_Actividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar Evento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar Evento.Designer.cs">
+      <DependentUpon>Editar Evento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Evento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Evento.Designer.cs">
+      <DependentUpon>Eliminar_Evento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar_Reuniones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_Reuniones.Designer.cs">
+      <DependentUpon>Consultar_Reuniones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editar_Reuniones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editar_Reuniones.Designer.cs">
+      <DependentUpon>Editar_Reuniones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Reuniones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Reuniones.Designer.cs">
+      <DependentUpon>Eliminar_Reuniones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar_Reuniones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrar_Reuniones.Designer.cs">
+      <DependentUpon>Registrar_Reuniones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestionar_Reuniones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestionar_Reuniones.Designer.cs">
+      <DependentUpon>Gestionar_Reuniones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar_Eventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrar_Eventos.Designer.cs">
+      <DependentUpon>Registrar_Eventos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestionar_Eventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestionar_Eventos.Designer.cs">
+      <DependentUpon>Gestionar_Eventos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar_Actividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrar_Actividades.Designer.cs">
+      <DependentUpon>Registrar_Actividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar_Fases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrar_Fases.Designer.cs">
+      <DependentUpon>Registrar_Fases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar_Proyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrar_Proyecto.Designer.cs">
+      <DependentUpon>Registrar_Proyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestionar_Proyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestionar_Proyectos.Designer.cs">
+      <DependentUpon>Gestionar_Proyectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar_Integrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrar_Integrante.Designer.cs">
+      <DependentUpon>Registrar_Integrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Lider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Lider.Designer.cs">
+      <DependentUpon>Menu_Lider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gestionar_Integrantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestionar_Integrantes.Designer.cs">
+      <DependentUpon>Gestionar_Integrantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Consultas.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Consutar_Semillero_Integrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consutar_Semillero_Integrante.Designer.cs">
+      <DependentUpon>Consutar_Semillero_Integrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar_Eventos_Integrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_Eventos_Integrante.Designer.cs">
+      <DependentUpon>Consultar_Eventos_Integrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar_Proyecto_Integrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_Proyecto_Integrante.Designer.cs">
+      <DependentUpon>Consultar_Proyecto_Integrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultar_Reunion_Integrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultar_Reunion_Integrante.Designer.cs">
+      <DependentUpon>Consultar_Reunion_Integrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Integrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Integrante.Designer.cs">
+      <DependentUpon>Menu_Integrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_Usuarios.Designer.cs">
+      <DependentUpon>Login_Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Consultar_Actividades.resx">
+      <DependentUpon>Consultar_Actividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_Eventos_Integrante.resx">
+      <DependentUpon>Consultar_Eventos_Integrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_Fases.resx">
+      <DependentUpon>Consultar_Fases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_Proyectos.resx">
+      <DependentUpon>Consultar_Proyectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_Reuniones.resx">
+      <DependentUpon>Consultar_Reuniones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_Reunion_Integrante.resx">
+      <DependentUpon>Consultar_Reunion_Integrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consutar_Semillero_Integrante.resx">
+      <DependentUpon>Consutar_Semillero_Integrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_Proyecto_Integrante.resx">
+      <DependentUpon>Consultar_Proyecto_Integrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar Evento.resx">
+      <DependentUpon>Editar Evento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar_Fases.resx">
+      <DependentUpon>Editar_Fases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar_Integrante.resx">
+      <DependentUpon>Editar_Integrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar_Proyecto.resx">
+      <DependentUpon>Editar_Proyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar_Reuniones.resx">
+      <DependentUpon>Editar_Reuniones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Actividades.resx">
+      <DependentUpon>Eliminar_Actividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Evento.resx">
+      <DependentUpon>Eliminar_Evento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Fases.resx">
+      <DependentUpon>Eliminar_Fases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Integrante.resx">
+      <DependentUpon>Eliminar_Integrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_Integrantes.resx">
+      <DependentUpon>Consultar_Integrantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editar_Actividades.resx">
+      <DependentUpon>Editar_Actividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Proyectos.resx">
+      <DependentUpon>Eliminar_Proyectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Reuniones.resx">
+      <DependentUpon>Eliminar_Reuniones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestionar_Eventos.resx">
+      <DependentUpon>Gestionar_Eventos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestionar_Integrantes.resx">
+      <DependentUpon>Gestionar_Integrantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestionar_Proyectos.resx">
+      <DependentUpon>Gestionar_Proyectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestionar_Reuniones.resx">
+      <DependentUpon>Gestionar_Reuniones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_Usuarios.resx">
+      <DependentUpon>Login_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Integrante.resx">
+      <DependentUpon>Menu_Integrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Lider.resx">
+      <DependentUpon>Menu_Lider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Registrar_Actividades.resx">
+      <DependentUpon>Registrar_Actividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrar_Eventos.resx">
+      <DependentUpon>Registrar_Eventos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrar_Fases.resx">
+      <DependentUpon>Registrar_Fases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrar_Integrante.resx">
+      <DependentUpon>Registrar_Integrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrar_Proyecto.resx">
+      <DependentUpon>Registrar_Proyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrar_Reuniones.resx">
+      <DependentUpon>Registrar_Reuniones.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\senita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojito.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
