@@ -35,8 +35,7 @@ nombreorganizadorEvento VARCHAR(27) NOT NULL
 )
 
 CREATE TABLE Investigadores (
-idInvestigador INT IDENTITY(1,1) PRIMARY KEY,
-cedulaInvestigador VARCHAR(11) NOT NULL,
+cedulaInvestigador VARCHAR(11) PRIMARY KEY NOT NULL,
 nombreInvestigador VARCHAR(27) NOT NULL,
 rolInvestigador VARCHAR(27) NOT NULL,
 fechanacimientoInvestigador DATE NOT NULL,
@@ -57,8 +56,8 @@ horaReunion TIME NOT NULL,
 lugarReunion VARCHAR(27) NOT NULL,
 enlaceReunion VARCHAR(70) NOT NULL,
 motivoReunion VARCHAR(70) NOT NULL,
-idInvestigador INT NOT NULL,
-FOREIGN KEY (idInvestigador) REFERENCES investigadores(idInvestigador)
+cedulaInvestigador VARCHAR(11) NOT NULL,
+FOREIGN KEY (cedulaInvestigador) REFERENCES Investigadores(cedulaInvestigador)
 )
 
 CREATE TABLE Fases (
@@ -79,10 +78,10 @@ FOREIGN KEY (idFase) REFERENCES fases(idFase)
 )
 
 CREATE TABLE Proyectos_investigadores (
-idProyecto INT NOT NULL, idInvestigador INT NOT NULL,
-PRIMARY KEY (idProyecto, idInvestigador),
+idProyecto INT NOT NULL, cedulaInvestigador VARCHAR(11) NOT NULL,
+PRIMARY KEY (idProyecto, cedulaInvestigador),
 FOREIGN KEY (idProyecto) REFERENCES proyectos(idProyecto),
-FOREIGN KEY (idInvestigador) REFERENCES investigadores(idInvestigador)
+FOREIGN KEY (cedulaInvestigador) REFERENCES Investigadores(cedulaInvestigador)
 )
 
 CREATE TABLE Eventos_proyectos (
@@ -125,9 +124,9 @@ INSERT INTO Investigadores VALUES
 ('1006789012', 'Luis Torres', 'integrante', '2002-11-05', 'masculino', 'luis@soy.sena.edu.co', '3005556677', 'Ingenieria Sistemas', 1, NULL)
 
 INSERT INTO Reuniones VALUES
-('2026-02-05', '10:00:00', 'sala 1', 'https://meet1.com', 'avance proyecto', 1),
-('2026-02-12', '14:00:00', 'sala 2', 'https://meet2.com', 'revision actividades', 2),
-('2026-02-18', '09:00:00', 'sala 3', 'https://meet3.com', 'planeacion fase', 3)
+('2026-02-05', '10:00:00', 'sala 1', 'https://meet1.com', 'avance proyecto', '1002345678'),
+('2026-02-12', '14:00:00', 'sala 2', 'https://meet2.com', 'revision actividades', '1003456789'),
+('2026-02-18', '09:00:00', 'sala 3', 'https://meet3.com', 'planeacion fase', '1004567890')
 
 INSERT INTO Fases VALUES
 ('analisis', 1, 1),
@@ -144,13 +143,13 @@ INSERT INTO Actividades VALUES
 ('documentacion', 4, '2026-03-01', 4)
 
 INSERT INTO Proyectos_investigadores VALUES
-(1,1),
-(1,2),
-(2,3),
-(2,4),
-(3,5),
-(4,1),
-(5,2)
+(1,'1002345678'),
+(1,'1003456789'),
+(2,'1004567890'),
+(2,'1005678901'),
+(3,'1006789012'),
+(4,'1002345678'),
+(5,'1003456789')
 
 INSERT INTO Eventos_proyectos VALUES
 (1,1),
@@ -159,21 +158,3 @@ INSERT INTO Eventos_proyectos VALUES
 (4,4),
 (1,5)
 
-
--- 1. Mostrar titulo y estado del proyecto, cuya fecha de  inicio este entre el 1 de febrero del 2026 y el 25 de febrero del 2026 junto con el nombre del semillero al que pertenece y el nombre de los investigadores que lo integran
-
--- 2. Mostrar el rol de tipo lider de los investigadores del semillero investic, junto con los titulos de proyectos que esten en estado finalizado
-
--- 3. Mostrar la mayor edad de los investigadores de tipo integrantes que sean mujeres y los nombres de los semilleros al que pertenecen
-
--- 4. Mostrar la cantidad de fases y la cantidad de actividades que tiene el proyecto de titulo proyecto tic
-
--- 5. Mostrar los nombres de los proyectos, fases de aquellos proyectos con actividades cuya fecha de entrega este entre el 1 de febrero y el 18 de febrero del 2026
-
--- 6. Mostrar la fecha de finalizacion de los proyectos con estado en ejecucion cuya duracion del proyecto sea de dos meses
-
--- 7. Mostrar el nombre del evento, organizador y fecha en el que participa el proyecto de nombre desarrollo e innovacion, junto con la cantidad de investigadores que tiene ese proyecto
-
--- 8. Mostrar los nombres de los eventos con fecha entre 1 y 30 de enero de 2026 de los proyectos de tipo ponencia junto con los nombres de los proyectos relacionados con el rol de investigador
-
--- 9. Mostrar los nombres de los investigadores que sean mayor de edad de genero masculino, el nombre del proyecto al que pertenece y el tipo de evento en el que ha participado
