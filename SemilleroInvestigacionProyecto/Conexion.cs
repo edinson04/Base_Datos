@@ -17,7 +17,7 @@ namespace SemilleroInvestigacionProyecto
             try
             {
                 // Ajustado a tu servidor y base de datos
-                con = new SqlConnection("Data Source=COIN_COMPUTERS\\SQLEXPRESS; Initial Catalog=semillero_BD; Integrated Security=True");
+                con = new SqlConnection("data Source = localhost\\SQLEXPRESS; Initial Catalog = Semillero_BD; Integrated Security = true");
                 con.Open();
             }
             catch (Exception e)

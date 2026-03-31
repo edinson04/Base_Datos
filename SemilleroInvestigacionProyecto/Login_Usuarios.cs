@@ -23,15 +23,13 @@ namespace SemilleroInvestigacionProyecto
 
         private void Form_login_Activated_1(object sender, EventArgs e)
         {
-            pictureBox1.Focus(); // Pasar el foco a la imagen y no a la caja de texto
+           this.ActiveControl = null;
         }
 
         private void Login_Usuarios_Click(object sender, EventArgs e)
         {
-            pictureBox1.Focus();// pasar el foco a la imagen a dar click en partes del formulario
+            pictureBox1.Focus();
         }
-
-        // Logica para usuario
 
         private void txt_usuario_Enter(object sender, EventArgs e)
         {
@@ -41,18 +39,16 @@ namespace SemilleroInvestigacionProyecto
                 txt_usuario.ForeColor = Color.Black;
             }
         }
+
         private void txt_usuario_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_usuario.Text))
             {
-                if (string.IsNullOrWhiteSpace(txt_usuario.Text))
-                {
-                    txt_usuario.Text = "Usuario";
-                    txt_usuario.ForeColor = Color.Silver;
-                }
+                txt_usuario.Text = "Usuario";
+                txt_usuario.ForeColor = Color.Silver;
             }
         }
-
+      
         private void txt_usuario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -62,7 +58,6 @@ namespace SemilleroInvestigacionProyecto
             }
         }
 
-        // Logica para contraseña
         private void txt_contraseña_Enter(object sender, EventArgs e)
         {
             if (txt_contraseña.Text == "Contraseña")
@@ -111,40 +106,29 @@ namespace SemilleroInvestigacionProyecto
             }
         }
 
-        
 
-       
+
+
         // Logica para boton Iniciar Sesion
 
         private void button_Iniciar_Sesion_Click(object sender, EventArgs e)
         {
-            
 
-            if (txt_usuario.Text == "Usuario" || txt_contraseña.Text == "Contraseña")
+
+            if (txt_usuario.Text == "Usuario" || txt_contraseña.Text == "Contraseña" || txt_usuario.Text == "" || txt_contraseña.Text == "")
             {
                 MessageBox.Show("Complete todos los campos", "Gestion Semilleros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
 
-            else if (txt_usuario.Text == "Usuario" || txt_contraseña.Text == "")
+            else
             {
-                MessageBox.Show("Complete todos los campos", "Gestion Semilleros", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            else if (txt_usuario.Text == "" || txt_contraseña.Text == "Contraseña")
-            {
-                MessageBox.Show("Complete todos los campos", "Gestion Semilleros", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            else if (co.Iniciar_sesion(txt_usuario.Text, txt_contraseña.Text)) // llamo al metedo Iniciar Sesion y le doy los parametros
-            {
+                if (co.Iniciar_sesion(txt_usuario.Text, txt_contraseña.Text)) // llamo al metedo Iniciar Sesion y le doy los parametros
                 MessageBox.Show("¡Inicio de sesión exitoso!", "Gestion Semilleros", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }
-
-        
     }
 }
 
