@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SemilleroInvestigacionProyecto
 {
-    internal class Conexion // Se declara una clase llamada conexion
+    internal class Conexion 
     {
         SqlConnection con;
 
@@ -16,7 +16,7 @@ namespace SemilleroInvestigacionProyecto
         {
             try
             {
-                // Ajustado a tu servidor y base de datos
+                
                 con = new SqlConnection("data Source = localhost\\SQLEXPRESS; Initial Catalog = Semillero_BD; Integrated Security = true");
                 con.Open();
             }

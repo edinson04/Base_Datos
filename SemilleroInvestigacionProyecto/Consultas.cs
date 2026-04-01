@@ -12,60 +12,32 @@ namespace SemilleroInvestigacionProyecto
     internal class Consulta
     {
         Conexion cn = new Conexion();   
-        DataSet ds = new DataSet();
-        public bool Iniciar_sesion(string idUsuario, string claveUsuario)
+        public (bool ok, string tipoUsuario) Iniciar_sesion(string idUsuario, string claveUsuario)
         {
-            bool estado_conexion = false;
-            ds.Clear();
-
-            // Ajustado: La columna en tu SQL es 'claveUsuario'
-            string query = "SELECT idUsuario, claveUsuario, tipoUsuario FROM Usuario WHERE idUsuario = @idUsuario AND claveUsuario = @claveUsuario";
-
-            SqlCommand comando = new SqlCommand(query, cn.Conectar());
-            comando.Parameters.AddWithValue("@idUsuario", idUsuario);
-            comando.Parameters.AddWithValue("@claveUsuario", claveUsuario); 
-
             try
             {
-                SqlDataAdapter da = new SqlDataAdapter(comando);
-                da.Fill(ds, "Usuario");
-
-                if (ds.Tables["Usuario"].Rows.Count > 0)
+                SqlCommand consulta = new SqlCommand("SELECT tipoUsuario FROM Usuario WHERE idUsuario = @idUsuario AND claveUsuario = @claveUsuario", cn.Conectar());
+                consulta.Parameters.AddWithValue("@idUsuario", idUsuario);
+                consulta.Parameters.AddWithValue("@claveUsuario", claveUsuario);
+                SqlDataReader dr = consulta.ExecuteReader();
+                if (dr.Read())
                 {
-                    DataRow dr = ds.Tables["Usuario"].Rows[0];
                     string tipo = dr["tipoUsuario"].ToString();
-
-                    // Redirección según tu base de datos
-                    if (tipo == "Administrador")
-                    {
-                        
-                    }
-                    else if (tipo == "Integrante")
-                    {
-                        
-                    }
-
-                    else if(tipo == "Integrante")
-                    {
-
-                    }
-                    estado_conexion = true;
+                    return (true, tipo);
                 }
                 else
                 {
-                    MessageBox.Show("Usuario o clave incorrectos");
+                    return (false, null);
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                MessageBox.Show("Error en consulta: " + ex.Message);
+                throw;
             }
             finally
             {
                 cn.Cerrar();
             }
-
-            return estado_conexion;
         }
     }
 }

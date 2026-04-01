@@ -12,7 +12,7 @@ namespace SemilleroInvestigacionProyecto
 {
     public partial class Consultar_Reunion_Integrante : Form
     {
-        public Consultar_Reunion_Integrante()
+        public Consultar_Reunion_Integrante(string idUsuario)
         {
             InitializeComponent();
         }

@@ -36,6 +36,7 @@
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.pictureBox_ojito = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Btn_salir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ojito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,6 @@
             this.txt_contraseña.TabIndex = 1;
             this.txt_contraseña.Text = "Contraseña";
             this.txt_contraseña.Enter += new System.EventHandler(this.txt_contraseña_Enter);
-            this.txt_contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_contraseña_KeyPress);
             this.txt_contraseña.Leave += new System.EventHandler(this.txt_contraseña_Leave);
             // 
             // label1
@@ -131,12 +131,28 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // Btn_salir
+            // 
+            this.Btn_salir.BackColor = System.Drawing.Color.Crimson;
+            this.Btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_salir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Btn_salir.Location = new System.Drawing.Point(27, 380);
+            this.Btn_salir.Name = "Btn_salir";
+            this.Btn_salir.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Btn_salir.Size = new System.Drawing.Size(320, 43);
+            this.Btn_salir.TabIndex = 7;
+            this.Btn_salir.Text = "SALIR DEL APLICATIVO";
+            this.Btn_salir.UseVisualStyleBackColor = false;
+            this.Btn_salir.Click += new System.EventHandler(this.Btn_salir_Click);
+            // 
             // Login_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(376, 450);
+            this.Controls.Add(this.Btn_salir);
             this.Controls.Add(this.pictureBox_ojito);
             this.Controls.Add(this.button_Iniciar_Sesion);
             this.Controls.Add(this.pictureBox1);
@@ -166,6 +182,7 @@
         private System.Windows.Forms.Button button_Iniciar_Sesion;
         private System.Windows.Forms.PictureBox pictureBox_ojito;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.Button Btn_salir;
     }
 }
 

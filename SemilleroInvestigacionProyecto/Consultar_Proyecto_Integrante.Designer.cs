@@ -30,10 +30,9 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dgv_proyectos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_proyectos)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -49,33 +48,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 145);
+            this.label1.Location = new System.Drawing.Point(35, 143);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 31);
+            this.label1.Size = new System.Drawing.Size(298, 31);
             this.label1.TabIndex = 21;
-            this.label1.Text = "CONSULTAR PROYECTO";
+            this.label1.Text = "Proyectos del Semillero";
             // 
-            // button1
+            // Dgv_proyectos
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(105, 346);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(162, 31);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Consultar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(62, 196);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(244, 120);
-            this.dataGridView1.TabIndex = 19;
+            this.Dgv_proyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_proyectos.Location = new System.Drawing.Point(18, 196);
+            this.Dgv_proyectos.Name = "Dgv_proyectos";
+            this.Dgv_proyectos.ReadOnly = true;
+            this.Dgv_proyectos.Size = new System.Drawing.Size(327, 198);
+            this.Dgv_proyectos.TabIndex = 19;
             // 
             // Consultar_Proyecto_Integrante
             // 
@@ -85,13 +71,13 @@
             this.ClientSize = new System.Drawing.Size(369, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Dgv_proyectos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Consultar_Proyecto_Integrante";
             this.Text = "Consultar Proyecto Integrante";
+            this.Load += new System.EventHandler(this.consultar_proyecto_Integrante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_proyectos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,7 +87,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dgv_proyectos;
     }
 }

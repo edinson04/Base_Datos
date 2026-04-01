@@ -12,7 +12,7 @@ namespace SemilleroInvestigacionProyecto
 {
     public partial class Consutar_Semillero_Integrante : Form
     {
-        public Consutar_Semillero_Integrante()
+        public Consutar_Semillero_Integrante(string idUsuario)
         {
             InitializeComponent();
         }

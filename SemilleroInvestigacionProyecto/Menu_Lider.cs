@@ -12,9 +12,18 @@ namespace SemilleroInvestigacionProyecto
 {
     public partial class Menu_Lider : Form
     {
-        public Menu_Lider()
+        public Menu_Lider(string idUsuario)
         {
             InitializeComponent();
+        }
+
+        private void btn_cerrar_sesion_Click(object sender, EventArgs e)
+        {
+           if (MessageBox.Show("¿Seguro desea cerrar la sesion lider?", "Cerrar sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            {
+                new Login_Usuarios().Show();
+                this.Close();
+            }
         }
     }
 }
