@@ -126,7 +126,7 @@ INSERT INTO Investigadores VALUES
 INSERT INTO Reuniones VALUES
 ('2026-02-05', '10:00:00', 'sala 1', 'https://meet1.com', 'avance proyecto', '1002345678'),
 ('2026-02-12', '14:00:00', 'sala 2', 'https://meet2.com', 'revision actividades', '1003456789'),
-('2026-02-18', '09:00:00', 'sala 3', 'https://meet3.com', 'planeacion fase', '1004567890')
+('2026-02-18', '09:00:00', 'sala 3', 'https://meet3.com', 'planeacion fase', '1002345678')
 
 INSERT INTO Fases VALUES
 ('analisis', 1, 1),
