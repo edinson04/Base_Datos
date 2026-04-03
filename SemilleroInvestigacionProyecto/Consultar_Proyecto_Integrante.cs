@@ -13,7 +13,7 @@ namespace SemilleroInvestigacionProyecto
 {
     public partial class Consultar_Proyecto_Integrante : Form
     {
-        private string cedulaInvestigador;
+        string cedulaInvestigador;
         public Consultar_Proyecto_Integrante(string idUsuario)
         {
             InitializeComponent();
@@ -31,18 +31,16 @@ namespace SemilleroInvestigacionProyecto
             try
             {
                 Conexion cn = new Conexion();
-                {
-                    SqlCommand cmd = new SqlCommand("SELECT p.* FROM Proyectos p, Proyectos_investigadores pi WHERE p.idProyecto = pi.idProyecto AND pi.cedulaInvestigador = @cedulaInvestigador", cn.Conectar());
-
-                    cmd.Parameters.AddWithValue("@cedulaInvestigador", cedulaInvestigador);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                SqlCommand consulta = new SqlCommand("SELECT p.* FROM Proyectos p, Proyectos_investigadores pi WHERE p.idProyecto = pi.idProyecto AND" +
+                    " pi.cedulaInvestigador = @cedulaInvestigador", cn.Conectar());
+                consulta.Parameters.AddWithValue("@cedulaInvestigador", cedulaInvestigador);
+                SqlDataAdapter da = new SqlDataAdapter(consulta);
                     da.Fill(dt);
-                }
+                
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                MessageBox.Show("Error al cargar proyectos: " + ex.Message);
+                MessageBox.Show(e.Message);
             }
 
             return dt;

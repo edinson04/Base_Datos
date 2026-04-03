@@ -92,6 +92,7 @@
             this.Btn_consultar_eventos.TabIndex = 11;
             this.Btn_consultar_eventos.Text = "Consultar Eventos";
             this.Btn_consultar_eventos.UseVisualStyleBackColor = false;
+            this.Btn_consultar_eventos.Click += new System.EventHandler(this.Btn_consultar_eventos_Click);
             // 
             // pictureBox1
             // 

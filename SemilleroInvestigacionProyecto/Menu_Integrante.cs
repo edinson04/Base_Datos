@@ -41,7 +41,14 @@ namespace SemilleroInvestigacionProyecto
 
         private void Btn_consultar_semillero_Click(object sender, EventArgs e)
         {
-            
+            Consutar_Semillero_Integrante csi = new Consutar_Semillero_Integrante(cedulaInvestigador);
+            csi.Show();
+        }
+
+        private void Btn_consultar_eventos_Click(object sender, EventArgs e)
+        {
+            Consultar_Evento_Integrante cei = new Consultar_Evento_Integrante(cedulaInvestigador);
+            cei.Show();
         }
     }
 }
