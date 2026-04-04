@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SemilleroInvestigacionProyecto
@@ -31,7 +25,12 @@ namespace SemilleroInvestigacionProyecto
             Conexion cn = new Conexion();
             try 
             {
-                SqlCommand consulta = new SqlCommand("");
+                SqlCommand consulta = new SqlCommand("SELECT e.*, tituloProyecto AS Proyecto_participante FROM Eventos e, Proyectos p, Eventos_proyectos ep, " +
+                    "Proyectos_investigadores pi WHERE e.idEvento = ep.idEvento AND p.idProyecto = ep.idProyecto AND p.idProyecto = pi.idProyecto AND " +
+                    "pi.cedulaInvestigador = @cedulaInvestigador", cn.Conectar());
+                consulta.Parameters.AddWithValue("@cedulaInvestigador", cedulaInvestigador);
+                SqlDataAdapter da = new SqlDataAdapter(consulta);
+                da.Fill(dt);
             }
             catch (Exception e)
             {

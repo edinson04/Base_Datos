@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SemilleroInvestigacionProyecto
@@ -16,6 +9,7 @@ namespace SemilleroInvestigacionProyecto
         {
             InitializeComponent();
             cedulaInvestigador = idUsuario;
+
         }
 
         private void Btn_Cerrar_sesion_Click(object sender, EventArgs e)
@@ -30,25 +24,26 @@ namespace SemilleroInvestigacionProyecto
         private void Btn_consultar_proyectos_Click(object sender, EventArgs e)
         {
             Consultar_Proyecto_Integrante cpi = new Consultar_Proyecto_Integrante(cedulaInvestigador);
-            cpi.Show();
+            cpi.ShowDialog();
+            
         }
 
         private void Btn_consultar_reuniones_Click(object sender, EventArgs e)
         {
             Consultar_Reunion_Integrante cri = new Consultar_Reunion_Integrante(cedulaInvestigador);
-            cri.Show();
+            cri.ShowDialog();
         }
 
         private void Btn_consultar_semillero_Click(object sender, EventArgs e)
         {
             Consutar_Semillero_Integrante csi = new Consutar_Semillero_Integrante(cedulaInvestigador);
-            csi.Show();
+            csi.ShowDialog();
         }
 
         private void Btn_consultar_eventos_Click(object sender, EventArgs e)
         {
             Consultar_Evento_Integrante cei = new Consultar_Evento_Integrante(cedulaInvestigador);
-            cei.Show();
+            cei.ShowDialog();
         }
     }
 }
