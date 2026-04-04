@@ -44,9 +44,7 @@ correoInvestigador VARCHAR(30) NOT NULL,
 numerocelularInvestigador VARCHAR(11) NOT NULL,
 nombreprogramaInvestigador VARCHAR(27) NOT NULL,
 idSemillero INT NOT NULL,
-idUsuario VARCHAR(11),
 FOREIGN KEY (idSemillero) REFERENCES semillero(idSemillero),
-FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
 )
 
 CREATE TABLE Reuniones (
@@ -92,23 +90,25 @@ FOREIGN KEY (idEvento) REFERENCES eventos(idEvento)
 )
 
 INSERT INTO Usuario VALUES
-('1001234567', 'hash_admin', 'Administrador'),
-('1002345678', 'hash_lider1', 'Lider'),
-('1003456789', 'hash_lider2', 'Lider'),
-('1004567890', 'hash_user1', 'Integrante')
-
+('1001234567', 'clave admin', 'Administrador'),
+('1002345678', 'clave lider investic', 'Lider'),
+('1003456789', 'clave lider innova', 'Lider'),
+('1009876543', 'clave lider datalab', 'Lider'),
+('1004567890', 'clave integrante investic1', 'integrante'),
+('1009012345', 'clave integrante innova1', 'integrante'),
+('1013456789', 'clave integrante datalab1', 'integrante')
 
 INSERT INTO Proyectos VALUES
-('proyecto tic', 1, 'Hacelo bien pa que trin', '2026-02-01', 'terminado'),
+('proyecto tic', 1, 'Hacelo bien pa que trin', '2026-02-01', 'en ejecucion'),
 ('proyecto tac', 2, 'Hacelo bien pa que tran', '2026-02-10', 'en ejecucion'),
 ('proyecto toc', 2, 'Hacelo bien pa que tron', '2026-02-20', 'en ejecucion'),
-('proyecto tec', 3, 'Hacelo bien pa que tren', '2026-03-17', 'terminado'),
-('proyecto tuc', 4, 'Hacelo bien pa que trun', '2026-04-11', 'terminado')
+('proyecto tec', 3, 'Hacelo bien pa que tren', '2026-03-17', 'en ejecucion'),
+('proyecto tuc', 4, 'Hacelo bien pa que trun', '2026-04-11', 'en ejecucion')
 
 INSERT INTO Semillero VALUES
 ('investic', '2024-02-01', 'tecnologia'),
 ('innova', '2023-03-15', 'software'),
-('dataLab', '2022-05-10', 'datos')
+('datalab', '2022-05-10', 'datos')
 
 INSERT INTO Eventos VALUES
 ('congreso tic', '2026-01-15', 'bogota', 'ponencia', 'universidad nacional'),
@@ -117,44 +117,88 @@ INSERT INTO Eventos VALUES
 ('foro digital', '2026-03-05', 'bogota', 'conferencia', 'ministerio tic')
 
 INSERT INTO Investigadores VALUES
-('1002345678', 'Ana Lopez', 'lider', '1995-04-12', 'femenino', 'ana@soy.sena.edu.co', '3001112233', 'Ingenieria Sistemas', 1, '1002345678'),
-('1003456789', 'Juan Rojas', 'lider', '1990-09-30', 'masculino', 'juan@soy.sena.edu.edu.co', '3004445566', 'Ingenieria Sistemas', 2, '1003456789'),
-('1004567890', 'Carlos Perez', 'integrante', '2001-07-25', 'masculino', 'carlos@soy.sena.edu.co', '3002223344', 'Ingenieria Software', 1, '1004567890'),
-('1005678901', 'Maria Gomez', 'integrante', '2000-03-18', 'femenino', 'maria@soy.sena.edu.co', '3003334455', 'Ciencia de Datos', 3, NULL),
-('1006789012', 'Luis Torres', 'integrante', '2002-11-05', 'masculino', 'luis@soy.sena.edu.co', '3005556677', 'Ingenieria Sistemas', 1, NULL)
+
+('1002345678', 'Ana Lopez', 'Lider', '1995-04-12', 'Femenino', 'ana@soy.sena.edu.co', '3001112233', 'Ing Sistemas', 1),
+('1004567890', 'Carlos Perez', 'Integrante', '2001-07-25', 'Masculino', 'carlos@soy.sena.edu.co', '3002223344', 'Ing Software', 1),
+('1006789012', 'Luis Torres', 'Integrante', '2002-11-05', 'Masculino', 'luis@soy.sena.edu.co', '3005556677', 'Ing Sistemas', 1),
+('1007890123', 'Andres Ruiz', 'Integrante', '2000-01-10', 'Masculino', 'andres@soy.sena.edu.co', '3007778899', 'Ing Sistemas', 1),
+('1008901234', 'Sofia Martinez', 'Integrante', '2001-05-21', 'Femenino', 'sofia@soy.sena.edu.co', '3008889900', 'Ing Software', 1),
+
+('1003456789', 'Juan Rojas', 'Lider', '1990-09-30', 'Masculino', 'juan@soy.sena.edu.co', '3004445566', 'Ing Sistemas', 2),
+('1009012345', 'Maria Gomez', 'Integrante', '2000-03-18', 'Femenino', 'maria@soy.sena.edu.co', '3003334455', 'Ciencia Datos', 2),
+('1010123456', 'Pedro Castillo', 'Integrante', '1999-12-12', 'Masculino', 'pedro@soy.sena.edu.co', '3011112233', 'Ing Software', 2),
+('1011234567', 'Laura Diaz', 'Integrante', '2002-06-14', 'Femenino', 'laura@soy.sena.edu.co', '3012223344', 'Ing Software', 2),
+('1012345678', 'David Herrera', 'Integrante', '2001-08-08', 'Masculino', 'david@soy.sena.edu.co', '3013334455', 'Ing Sistemas', 2),
+
+('1009876543', 'Camilo Vargas', 'Lider', '1993-02-20', 'Masculino', 'camilo@soy.sena.edu.co', '3021112233', 'Ciencia Datos', 3),
+('1013456789', 'Natalia Ruiz', 'Integrante', '2000-10-11', 'Femenino', 'natalia@soy.sena.edu.co', '3022223344', 'Ciencia Datos', 3),
+('1014567890', 'Diego Peña', 'Integrante', '1998-03-03', 'Masculino', 'diego@soy.sena.edu.co', '3023334455', 'Ciencia Datos', 3),
+('1015678901', 'Valeria Castro', 'Integrante', '2001-09-09', 'Femenino', 'valeria@soy.sena.edu.co', '3024445566', 'Analitica Datos', 3),
+('1016789012', 'Jorge Pineda', 'Integrante', '1999-07-07', 'Masculino', 'jorge@soy.sena.edu.co', '3025556677', 'Ciencia Datos', 3);
+
 
 INSERT INTO Reuniones VALUES
-('2026-02-05', '10:00:00', 'sala 1', 'https://meet1.com', 'avance proyecto', '1002345678'),
-('2026-02-12', '14:00:00', 'sala 2', 'https://meet2.com', 'revision actividades', '1003456789'),
-('2026-02-18', '09:00:00', 'sala 3', 'https://meet3.com', 'planeacion fase', '1002345678')
+('2026-02-05', '10:00', 'Sala 1', 'https://meet.google.com/a1', 'Inicio proyecto TIC','1002345678'),
+('2026-02-15', '14:00', 'Sala 2', 'https://meet.google.com/a2', 'Inicio proyecto TAC','1002345678'),
+
+('2026-02-12', '09:00', 'Sala 3', 'https://meet.google.com/b1', 'Planeacion proyecto TOC','1003456789'),
+('2026-02-20', '11:00', 'Sala 4', 'https://meet.google.com/b2', 'Revis','1003456789'),
+
+('2026-03-01', '08:00', 'Sala 5', 'https://meet.google.com/c1', 'Analisis de datos inicial','1009876543');
 
 INSERT INTO Fases VALUES
-('analisis', 1, 1),
-('desarrollo', 2, 1),
-('pruebas', 1, 2),
-('implementacion', 1, 3),
-('evaluacion', 1, 4)
+('Analisis', 1, 1),
+('Diseño', 1, 1),
+('Desarrollo', 2, 1),
+
+('Analisis', 1, 2),
+('Desarrollo', 2, 2),
+
+('Analisis de datos', 1, 3),
+('Modelado', 2, 3),
+
+('Implementacion', 1, 4),
+('Pruebas', 1, 4),
+
+('Planeacion', 1, 5),
+('Ejecucion', 2, 5);
 
 INSERT INTO Actividades VALUES
-('recoleccion datos', 5, '2026-02-05', 1),
-('diseno sistema', 7, '2026-02-10', 1),
-('programacion', 10, '2026-02-15', 2),
-('testing', 6, '2026-02-18', 3),
-('documentacion', 4, '2026-03-01', 4)
+('Levantamiento de requisitos', 5, '2026-02-05', 1),
+('Analisis de usuarios', 4, '2026-02-07', 1),
 
-INSERT INTO Proyectos_investigadores VALUES
-(1,'1002345678'),
-(1,'1003456789'),
-(2,'1004567890'),
-(2,'1005678901'),
-(3,'1006789012'),
-(4,'1002345678'),
-(5,'1003456789')
+('Diseño de arquitectura', 6, '2026-02-12', 2),
+
+('Desarrollo backend', 10, '2026-02-20', 3),
+('Desarrollo frontend', 8, '2026-02-22', 3),
+
+('Analisis inicial', 5, '2026-02-11', 4),
+('Programacion', 10, '2026-02-25', 5),
+
+('Recoleccion datos', 6, '2026-02-18', 6),
+('Entrenamiento modelo', 10, '2026-02-28', 7),
+
+('Despliegue sistema', 4, '2026-03-05', 8),
+('Pruebas funcionales', 5, '2026-03-08', 9),
+
+('Planificacion', 3, '2026-04-12', 10),
+('Ejecucion tareas', 8, '2026-04-20', 11);
+
+INSERT INTO Proyectos_investigadores 
+SELECT 1, cedulaInvestigador FROM Investigadores WHERE idSemillero = 1
+INSERT INTO Proyectos_investigadores 
+SELECT 2, cedulaInvestigador FROM Investigadores WHERE idSemillero = 1
+INSERT INTO Proyectos_investigadores 
+SELECT 3, cedulaInvestigador FROM Investigadores WHERE idSemillero = 2
+INSERT INTO Proyectos_investigadores 
+SELECT 4, cedulaInvestigador FROM Investigadores WHERE idSemillero = 2
+INSERT INTO Proyectos_investigadores 
+SELECT 5, cedulaInvestigador FROM Investigadores WHERE idSemillero = 3
 
 INSERT INTO Eventos_proyectos VALUES
-(1,1),
-(2,2),
-(3,3),
-(4,4),
-(1,5)
-
+(1,1), 
+(2,2), 
+(3,3), 
+(4,4), 
+(1,5), 
+(2,3)
