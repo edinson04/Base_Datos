@@ -152,6 +152,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(376, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.Btn_salir);
             this.Controls.Add(this.pictureBox_ojito);
             this.Controls.Add(this.button_Iniciar_Sesion);

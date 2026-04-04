@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SemilleroInvestigacionProyecto
 {
-    public partial class Gestionar_Integrantes : Form
+    public partial class Consultar_Integrantes : Form
     {
-        public Gestionar_Integrantes()
+        public Consultar_Integrantes()
         {
             InitializeComponent();
         }

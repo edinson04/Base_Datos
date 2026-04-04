@@ -42,5 +42,10 @@ namespace SemilleroInvestigacionProyecto
             }
             return dt;
         }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

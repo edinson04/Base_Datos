@@ -12,9 +12,11 @@ namespace SemilleroInvestigacionProyecto
 {
     public partial class Menu_Lider : Form
     {
+        string cedulaInvestigador;
         public Menu_Lider(string idUsuario)
         {
             InitializeComponent();
+            cedulaInvestigador = idUsuario;
         }
 
         private void btn_cerrar_sesion_Click(object sender, EventArgs e)

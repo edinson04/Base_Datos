@@ -31,6 +31,7 @@
             this.Dgv_semillero = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_semillero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -38,7 +39,7 @@
             // Dgv_semillero
             // 
             this.Dgv_semillero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_semillero.Location = new System.Drawing.Point(12, 199);
+            this.Dgv_semillero.Location = new System.Drawing.Point(12, 160);
             this.Dgv_semillero.Name = "Dgv_semillero";
             this.Dgv_semillero.ReadOnly = true;
             this.Dgv_semillero.Size = new System.Drawing.Size(350, 220);
@@ -48,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 144);
+            this.label1.Location = new System.Drawing.Point(107, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 31);
             this.label1.TabIndex = 13;
@@ -57,11 +58,24 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SemilleroInvestigacionProyecto.Properties.Resources.senita;
-            this.pictureBox1.Location = new System.Drawing.Point(171, 63);
+            this.pictureBox1.Location = new System.Drawing.Point(167, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(44, 54);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            // 
+            // BtnCerrar
+            // 
+            this.BtnCerrar.BackColor = System.Drawing.Color.Crimson;
+            this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCerrar.ForeColor = System.Drawing.SystemColors.Control;
+            this.BtnCerrar.Location = new System.Drawing.Point(148, 403);
+            this.BtnCerrar.Name = "BtnCerrar";
+            this.BtnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCerrar.TabIndex = 15;
+            this.BtnCerrar.Text = "Cerrar";
+            this.BtnCerrar.UseVisualStyleBackColor = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // Consutar_Semillero_Integrante
             // 
@@ -69,6 +83,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(374, 450);
+            this.ControlBox = false;
+            this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Dgv_semillero);
@@ -87,5 +103,6 @@
         private System.Windows.Forms.DataGridView Dgv_semillero;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnCerrar;
     }
 }
