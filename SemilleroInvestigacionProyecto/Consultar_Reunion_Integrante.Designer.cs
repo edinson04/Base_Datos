@@ -75,6 +75,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Consultar_Reunion_Integrante";
             this.Text = "Consultar Reunion Integrante";
+            this.Load += new System.EventHandler(this.Consultar_Reunion_Integrante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_reuniones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

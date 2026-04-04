@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace SemilleroInvestigacionProyecto
 {
     public partial class Menu_Integrante : Form
-    { private string cedulaInvestigador;
+    { string cedulaInvestigador;
         public Menu_Integrante(string idUsuario)
         {
             InitializeComponent();

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SemilleroInvestigacionProyecto
@@ -28,19 +22,23 @@ namespace SemilleroInvestigacionProyecto
         public DataTable ObtenerSemilleroporUsuario(string cedulaInvestigaador)
         {
             DataTable dt = new DataTable();
+            Conexion cn = new Conexion();
             try
             {
-                Conexion cn = new Conexion();
-                SqlCommand consulta = new SqlCommand("SELECT s.* FROM Semillero s, Investigadores i WHERE s.idSemillero = i.idSemillero AND " +
-                    "i.cedulaInvestigador = @cedulaInvestigador", cn.Conectar());
+                SqlCommand consulta = new SqlCommand("SELECT s.*, l.nombreInvestigador AS lider_del_semillero FROM Semillero s, Investigadores i," +
+                    " Investigadores l WHERE s.idSemillero = l.idSemillero AND l.rolInvestigador = 'Lider' AND i.idSemillero = l.idSemillero AND" +
+                    " i.cedulaInvestigador = @cedulaInvestigador", cn.Conectar());
                 consulta.Parameters.AddWithValue("@cedulaInvestigador", cedulaInvestigaador);
                 SqlDataAdapter da = new SqlDataAdapter(consulta);
                 da.Fill(dt);
-
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                cn.Cerrar();
             }
             return dt;
         }
