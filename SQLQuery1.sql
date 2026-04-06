@@ -61,7 +61,7 @@ FOREIGN KEY (cedulaInvestigador) REFERENCES Investigadores(cedulaInvestigador)
 CREATE TABLE Fases (
 idFase INT IDENTITY(1,1) PRIMARY KEY,
 nombreFase VARCHAR(27) NOT NULL,
-duracionFase INT NOT NULL,
+duracionFaseMeses INT NOT NULL,
 idProyecto INT NOT NULL,
 FOREIGN KEY (idProyecto) REFERENCES proyectos(idProyecto)
 )
@@ -122,19 +122,19 @@ INSERT INTO Investigadores VALUES
 ('1004567890', 'Carlos Perez', 'Integrante', '2001-07-25', 'Masculino', 'carlos@soy.sena.edu.co', '3002223344', 'Ing Software', 1),
 ('1006789012', 'Luis Torres', 'Integrante', '2002-11-05', 'Masculino', 'luis@soy.sena.edu.co', '3005556677', 'Ing Sistemas', 1),
 ('1007890123', 'Andres Ruiz', 'Integrante', '2000-01-10', 'Masculino', 'andres@soy.sena.edu.co', '3007778899', 'Ing Sistemas', 1),
-('1008901234', 'Sofia Martinez', 'Integrante', '2001-05-21', 'Femenino', 'sofia@soy.sena.edu.co', '3008889900', 'Ing Software', 1),
+--('1008901234', 'Sofia Martinez', 'Integrante', '2001-05-21', 'Femenino', 'sofia@soy.sena.edu.co', '3008889900', 'Ing Software', 1),
 
 ('1003456789', 'Juan Rojas', 'Lider', '1990-09-30', 'Masculino', 'juan@soy.sena.edu.co', '3004445566', 'Ing Sistemas', 2),
 ('1009012345', 'Maria Gomez', 'Integrante', '2000-03-18', 'Femenino', 'maria@soy.sena.edu.co', '3003334455', 'Ciencia Datos', 2),
 ('1010123456', 'Pedro Castillo', 'Integrante', '1999-12-12', 'Masculino', 'pedro@soy.sena.edu.co', '3011112233', 'Ing Software', 2),
 ('1011234567', 'Laura Diaz', 'Integrante', '2002-06-14', 'Femenino', 'laura@soy.sena.edu.co', '3012223344', 'Ing Software', 2),
-('1012345678', 'David Herrera', 'Integrante', '2001-08-08', 'Masculino', 'david@soy.sena.edu.co', '3013334455', 'Ing Sistemas', 2),
+--('1012345678', 'David Herrera', 'Integrante', '2001-08-08', 'Masculino', 'david@soy.sena.edu.co', '3013334455', 'Ing Sistemas', 2),
 
 ('1009876543', 'Camilo Vargas', 'Lider', '1993-02-20', 'Masculino', 'camilo@soy.sena.edu.co', '3021112233', 'Ciencia Datos', 3),
 ('1013456789', 'Natalia Ruiz', 'Integrante', '2000-10-11', 'Femenino', 'natalia@soy.sena.edu.co', '3022223344', 'Ciencia Datos', 3),
 ('1014567890', 'Diego Peña', 'Integrante', '1998-03-03', 'Masculino', 'diego@soy.sena.edu.co', '3023334455', 'Ciencia Datos', 3),
-('1015678901', 'Valeria Castro', 'Integrante', '2001-09-09', 'Femenino', 'valeria@soy.sena.edu.co', '3024445566', 'Analitica Datos', 3),
-('1016789012', 'Jorge Pineda', 'Integrante', '1999-07-07', 'Masculino', 'jorge@soy.sena.edu.co', '3025556677', 'Ciencia Datos', 3);
+('1015678901', 'Valeria Castro', 'Integrante', '2001-09-09', 'Femenino', 'valeria@soy.sena.edu.co', '3024445566', 'Analitica Datos', 3)
+--('1016789012', 'Jorge Pineda', 'Integrante', '1999-07-07', 'Masculino', 'jorge@soy.sena.edu.co', '3025556677', 'Ciencia Datos', 3)
 
 
 INSERT INTO Reuniones VALUES
