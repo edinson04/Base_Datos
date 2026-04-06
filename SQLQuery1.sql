@@ -100,21 +100,21 @@ INSERT INTO Usuario VALUES
 
 INSERT INTO Proyectos VALUES
 ('proyecto tic', 1, 'Hacelo bien pa que trin', '2026-02-01', 'en ejecucion'),
-('proyecto tac', 2, 'Hacelo bien pa que tran', '2026-02-10', 'en ejecucion'),
-('proyecto toc', 2, 'Hacelo bien pa que tron', '2026-02-20', 'en ejecucion'),
-('proyecto tec', 3, 'Hacelo bien pa que tren', '2026-03-17', 'en ejecucion'),
-('proyecto tuc', 4, 'Hacelo bien pa que trun', '2026-04-11', 'en ejecucion')
+('proyecto tac', 2, 'Hacelo bien pa que tran', '2026-02-05', 'en ejecucion'),
+('proyecto toc', 2, 'Hacelo bien pa que tron', '2026-02-10', 'en ejecucion'),
+('proyecto tec', 3, 'Hacelo bien pa que tren', '2026-03-01', 'en ejecucion'),
+('proyecto tuc', 4, 'Hacelo bien pa que trun', '2026-04-01', 'en ejecucion')
 
 INSERT INTO Semillero VALUES
-('investic', '2024-02-01', 'tecnologia'),
-('innova', '2023-03-15', 'software'),
-('datalab', '2022-05-10', 'datos')
+('investic', '2026-01-19', 'tecnologia'),
+('innova', '2026-01-15', 'software'),
+('datalab', '2026-01-10', 'datos')
 
 INSERT INTO Eventos VALUES
-('congreso tic', '2026-01-15', 'bogota', 'ponencia', 'universidad nacional'),
-('feria innovacion', '2026-02-10', 'medellin', 'exposicion', 'minciencias'),
-('simposio tech', '2026-01-25', 'cali', 'ponencia', 'universidad valle'),
-('foro digital', '2026-03-05', 'bogota', 'conferencia', 'ministerio tic')
+('congreso tic', '2026-04-15', 'bogota', 'ponencia', 'universidad nacional'),
+('feria innovacion', '2026-05-10', 'medellin', 'exposicion', 'minciencias'),
+('simposio tech', '2026-06-25', 'cali', 'ponencia', 'universidad valle'),
+('foro digital', '2026-07-05', 'bogota', 'conferencia', 'ministerio tic')
 
 INSERT INTO Investigadores VALUES
 
@@ -144,12 +144,12 @@ INSERT INTO Reuniones VALUES
 ('2026-02-12', '09:00', 'Sala 3', 'https://meet.google.com/b1', 'Planeacion proyecto TOC','1003456789'),
 ('2026-02-20', '11:00', 'Sala 4', 'https://meet.google.com/b2', 'Revis','1003456789'),
 
-('2026-03-01', '08:00', 'Sala 5', 'https://meet.google.com/c1', 'Analisis de datos inicial','1009876543');
+('2026-03-01', '08:00', 'Sala 5', 'https://meet.google.com/c1', 'Analisis de datos inicial','1009876543')
 
 INSERT INTO Fases VALUES
 ('Analisis', 1, 1),
-('Diseño', 1, 1),
-('Desarrollo', 2, 1),
+('Diseño', 2, 1),
+('Desarrollo', 3, 1),
 
 ('Analisis', 1, 2),
 ('Desarrollo', 2, 2),
@@ -158,31 +158,31 @@ INSERT INTO Fases VALUES
 ('Modelado', 2, 3),
 
 ('Implementacion', 1, 4),
-('Pruebas', 1, 4),
+('Pruebas', 2, 4),
 
 ('Planeacion', 1, 5),
-('Ejecucion', 2, 5);
+('Ejecucion', 2, 5)
 
 INSERT INTO Actividades VALUES
-('Levantamiento de requisitos', 5, '2026-02-05', 1),
-('Analisis de usuarios', 4, '2026-02-07', 1),
+('Levantamiento de requisitos', 1, '2026-02-02', 1),
+('Analisis de usuarios', 2, '2026-02-04', 1),
 
-('Diseño de arquitectura', 6, '2026-02-12', 2),
+('Diseño de arquitectura', 3, '2026-02-07', 2),
 
-('Desarrollo backend', 10, '2026-02-20', 3),
-('Desarrollo frontend', 8, '2026-02-22', 3),
+('Desarrollo backend', 4, '2026-02-12', 3),
+('Desarrollo frontend', 5, '2026-02-17', 3),
 
-('Analisis inicial', 5, '2026-02-11', 4),
-('Programacion', 10, '2026-02-25', 5),
+('Analisis inicial', 3, '2026-02-08', 4),
+('Programacion', 7, '2026-02-15', 5),
 
-('Recoleccion datos', 6, '2026-02-18', 6),
-('Entrenamiento modelo', 10, '2026-02-28', 7),
+('Recoleccion datos', 2, '2026-02-12', 6),
+('Entrenamiento modelo', 10, '2026-02-22', 7),
 
 ('Despliegue sistema', 4, '2026-03-05', 8),
-('Pruebas funcionales', 5, '2026-03-08', 9),
+('Pruebas funcionales', 5, '2026-03-10', 9),
 
-('Planificacion', 3, '2026-04-12', 10),
-('Ejecucion tareas', 8, '2026-04-20', 11);
+('Planificacion', 3, '2026-04-04', 10),
+('Ejecucion tareas', 8, '2026-04-12', 11)
 
 INSERT INTO Proyectos_investigadores 
 SELECT 1, cedulaInvestigador FROM Investigadores WHERE idSemillero = 1
