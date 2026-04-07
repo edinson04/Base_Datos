@@ -44,7 +44,7 @@ correoInvestigador VARCHAR(30) NOT NULL,
 numerocelularInvestigador VARCHAR(11) NOT NULL,
 nombreprogramaInvestigador VARCHAR(27) NOT NULL,
 idSemillero INT NOT NULL,
-FOREIGN KEY (idSemillero) REFERENCES semillero(idSemillero),
+FOREIGN KEY (idSemillero) REFERENCES semillero(idSemillero) ON DELETE CASCADE
 )
 
 CREATE TABLE Reuniones (
@@ -55,7 +55,7 @@ lugarReunion VARCHAR(27) NOT NULL,
 enlaceReunion VARCHAR(70) NOT NULL,
 motivoReunion VARCHAR(70) NOT NULL,
 cedulaInvestigador VARCHAR(11) NOT NULL,
-FOREIGN KEY (cedulaInvestigador) REFERENCES Investigadores(cedulaInvestigador)
+FOREIGN KEY (cedulaInvestigador) REFERENCES Investigadores(cedulaInvestigador) ON DELETE CASCADE
 )
 
 CREATE TABLE Fases (
@@ -63,7 +63,7 @@ idFase INT IDENTITY(1,1) PRIMARY KEY,
 nombreFase VARCHAR(27) NOT NULL,
 duracionFaseMeses INT NOT NULL,
 idProyecto INT NOT NULL,
-FOREIGN KEY (idProyecto) REFERENCES proyectos(idProyecto)
+FOREIGN KEY (idProyecto) REFERENCES proyectos(idProyecto) ON DELETE CASCADE
 )
 
 CREATE TABLE Actividades (
@@ -72,21 +72,21 @@ nombreActividad VARCHAR(27) NOT NULL,
 duraciondiasActividad INT NOT NULL,
 fechaentregaActividad DATE NOT NULL,
 idFase INT NOT NULL,
-FOREIGN KEY (idFase) REFERENCES fases(idFase)
+FOREIGN KEY (idFase) REFERENCES fases(idFase) ON DELETE CASCADE
 )
 
 CREATE TABLE Proyectos_investigadores (
 idProyecto INT NOT NULL, cedulaInvestigador VARCHAR(11) NOT NULL,
 PRIMARY KEY (idProyecto, cedulaInvestigador),
-FOREIGN KEY (idProyecto) REFERENCES proyectos(idProyecto),
-FOREIGN KEY (cedulaInvestigador) REFERENCES Investigadores(cedulaInvestigador)
+FOREIGN KEY (idProyecto) REFERENCES proyectos(idProyecto) ON DELETE CASCADE,
+FOREIGN KEY (cedulaInvestigador) REFERENCES Investigadores(cedulaInvestigador) ON DELETE CASCADE
 )
 
 CREATE TABLE Eventos_proyectos (
 idEvento INT NOT NULL, idProyecto INT NOT NULL,
 PRIMARY KEY (idProyecto, idEvento),
-FOREIGN KEY (idProyecto) REFERENCES proyectos(idProyecto),
-FOREIGN KEY (idEvento) REFERENCES eventos(idEvento)
+FOREIGN KEY (idProyecto) REFERENCES proyectos(idProyecto) ON DELETE CASCADE,
+FOREIGN KEY (idEvento) REFERENCES eventos(idEvento) ON DELETE CASCADE
 )
 
 INSERT INTO Usuario VALUES
@@ -135,7 +135,6 @@ INSERT INTO Investigadores VALUES
 ('1014567890', 'Diego Peña', 'Integrante', '1998-03-03', 'Masculino', 'diego@soy.sena.edu.co', '3023334455', 'Ciencia Datos', 3),
 ('1015678901', 'Valeria Castro', 'Integrante', '2001-09-09', 'Femenino', 'valeria@soy.sena.edu.co', '3024445566', 'Analitica Datos', 3)
 --('1016789012', 'Jorge Pineda', 'Integrante', '1999-07-07', 'Masculino', 'jorge@soy.sena.edu.co', '3025556677', 'Ciencia Datos', 3)
-
 
 INSERT INTO Reuniones VALUES
 ('2026-02-05', '10:00', 'Sala 1', 'https://meet.google.com/a1', 'Inicio proyecto TIC','1002345678'),
@@ -202,3 +201,6 @@ INSERT INTO Eventos_proyectos VALUES
 (4,4), 
 (1,5), 
 (2,3)
+
+DELETE FROM Investigadores WHERE cedulaInvestigador = '1008901234'
+DELETE FROM Proyectos_investigadores WHERE cedulaInvestigador = '1008901234'
